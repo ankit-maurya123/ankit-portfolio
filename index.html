@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ankit Maurya - Full Stack Web Developer</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Theme Detection Script (prevents flash) -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (savedTheme === 'light' || (!savedTheme && !prefersDark)) {
+                document.documentElement.classList.add('light-mode');
+            }
+        })();
+    </script>
+</head>
+<body class="font-poppins bg-gray-900 text-white">
+
+    <!-- Preloader -->
+    <div id="preloader" class="fixed inset-0 bg-gray-900 z-50 flex items-center justify-center">
+        <div class="loader">
+            <div class="loader-circle"></div>
+            <div class="loader-circle"></div>
+            <div class="loader-circle"></div>
+        </div>
+    </div>
+
+    <!-- Header/Navigation -->
+    <header id="header" class="fixed top-0 left-0 w-full z-40 transition-all duration-300">
+        <nav class="header-nav container mx-auto">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <a href="" class="logo flex items-center gap-2" style="text-decoration:none;">
+                    <span class="logo-icon">
+                        <i class="fas fa-code"></i>
+                    </span>
+                    <span class="text-gradient font-bold logo-text">Portfolio</span>
+                </a>
+
+                <!-- Desktop Navigation - shows at 1024px+ -->
+                <ul class="desktop-nav" id="desktop-nav">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+
+                <!-- Right Side Actions -->
+                <div class="flex items-center gap-2">
+                    <!-- Theme Toggle Button -->
+                    <button id="theme-toggle" class="theme-toggle-btn" title="Toggle Dark/Light Mode">
+                        <i class="fas fa-moon theme-icon-dark"></i>
+                        <i class="fas fa-sun theme-icon-light"></i>
+                    </button>
+
+                    <!-- CTA Button - visible on desktop only -->
+                    <a href="#contact" class="btn-primary btn-nav desktop-only" style="text-decoration:none;">
+                        <i class="fas fa-paper-plane mr-2"></i>
+                        <span>Hire Me</span>
+                    </a>
+
+                    <!-- Mobile/Tablet Menu Toggle Button -->
+                    <button id="mobile-menu-btn" class="hamburger-btn mobile-only" aria-label="Open Menu">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile/Tablet Navigation - OUTSIDE header to avoid stacking context issues -->
+    <div id="mobile-menu" class="mobile-menu-overlay">
+        <div class="mobile-menu-inner">
+            <!-- Mobile Menu Header -->
+            <div class="mobile-menu-header">
+                <a href="" class="flex items-center gap-2" style="text-decoration:none;">
+                    <span class="logo-icon">
+                        <i class="fas fa-code"></i>
+                    </span>
+                    <span class="text-gradient font-bold logo-text">Portfolio</span>
+                </a>
+                <button id="close-menu-btn" class="close-menu-btn" aria-label="Close Menu">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu Links -->
+            <ul class="mobile-nav-list">
+                <li><a href="#home" class="mobile-nav-link"><i class="fas fa-home"></i><span>Home</span></a></li>
+                <li><a href="#about" class="mobile-nav-link"><i class="fas fa-user"></i><span>About</span></a></li>
+                <li><a href="#services" class="mobile-nav-link"><i class="fas fa-cogs"></i><span>Services</span></a></li>
+                <li><a href="#skills" class="mobile-nav-link"><i class="fas fa-laptop-code"></i><span>Skills</span></a></li>
+                <li><a href="#projects" class="mobile-nav-link"><i class="fas fa-project-diagram"></i><span>Projects</span></a></li>
+                <li><a href="#testimonials" class="mobile-nav-link"><i class="fas fa-quote-left"></i><span>Testimonials</span></a></li>
+                <li><a href="#contact" class="mobile-nav-link"><i class="fas fa-envelope"></i><span>Contact</span></a></li>
+            </ul>
+
+            <!-- Mobile Menu Footer -->
+            <div class="mobile-menu-footer">
+                <!-- Hire Me Button -->
+                <a href="#contact" class="mobile-hire-btn" style="text-decoration:none;">
+                    <i class="fas fa-paper-plane mr-2"></i>
+                    <span>Hire Me</span>
+                </a>
+
+                <!-- Mobile Theme Toggle -->
+                <div class="flex justify-center" style="margin-top:20px;">
+                    <button id="theme-toggle-mobile" class="theme-toggle-btn-mobile" title="Toggle Dark/Light Mode">
+                        <span class="theme-toggle-track">
+                            <i class="fas fa-moon moon-icon"></i>
+                            <i class="fas fa-sun sun-icon"></i>
+                            <span class="theme-toggle-thumb"></span>
+                        </span>
+                    </button>
+                </div>
+
+                <!-- Social Links -->
+                <div class="mobile-social-links">
+                    <a href="https://github.com/ankit-maurya123" target="_blank" class="mobile-social-icon" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/ankit-maurya-a93489264/" target="_blank" class="mobile-social-icon" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://leetcode.com/u/eFKU0WLgdR/" target="_blank" class="mobile-social-icon" title="LeetCode">
+                        <i class="fas fa-code"></i>
+                    </a>
+                    <a href="mailto:mauryankit071@gmail.com" class="mobile-social-icon" title="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+
+<!-- Hero Section -->
+<section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+    <!-- Background Elements -->
+    <div class="absolute inset-0 overflow-hidden">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="particles" id="particles"></div>
+    </div>
+
+    <div class="container mx-auto px-6 relative z-10">
+        <div class="flex flex-col lg:flex-row items-center justify-between gap-12">
+            <!-- Text Content -->
+            <div class="lg:w-1/2 text-center lg:text-left" data-aos="fade-right" data-aos-duration="1000">
+                <p class="text-purple-500 font-medium mb-2">Welcome to my portfolio</p>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
+                    Hi, I'm <span class="text-gradient">Ankit Maurya</span>
+                </h1>
+                <div class="text-xl md:text-2xl text-gray-300 mb-6 h-8">
+                    <span id="typed-text"></span>
+                    <span class="typed-cursor">|</span>
+                </div>
+                <p class="text-gray-400 mb-8 max-w-lg mx-auto lg:mx-0">
+                    Passionate and results-driven Full Stack Web Developer with 2+ years of hands-on experience building scalable, user-friendly, and SEO-friendly web applications. I specialize in the MERN stack (MongoDB, Express, React, Node.js), Next.js, and PHP / CodeIgniter 4, and have shipped 3 complete e-commerce platforms covering REST APIs, authentication, admin dashboards, payment integration, and SEO optimization.
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <a href="#projects" class="btn-primary inline-flex items-center justify-center">
+                        <span>View My Work</span>
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                    <a href="#contact" class="btn-secondary inline-flex items-center justify-center">
+                        <span>Let's Talk</span>
+                        <i class="fas fa-paper-plane ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Stats -->
+                <div class="grid grid-cols-3 gap-6 mt-12">
+                    <div class="text-center lg:text-left" data-aos="fade-up" data-aos-delay="200">
+                        <h3 class="text-3xl md:text-4xl font-bold text-gradient counter" data-target="3">0</h3>
+                        <p class="text-gray-400 text-sm">E-Commerce Projects</p>
+                    </div>
+                    <div class="text-center lg:text-left" data-aos="fade-up" data-aos-delay="300">
+                        <h3 class="text-3xl md:text-4xl font-bold text-gradient counter" data-target="14">0</h3>
+                        <p class="text-gray-400 text-sm">Tech Stack Skills</p>
+                    </div>
+                    <div class="text-center lg:text-left" data-aos="fade-up" data-aos-delay="400">
+                        <h3 class="text-3xl md:text-4xl font-bold text-gradient counter" data-target="2">0</h3>
+                        <p class="text-gray-400 text-sm">Years Experience</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile Image -->
+            <div class="lg:w-1/2 flex justify-center" data-aos="fade-left" data-aos-duration="1000">
+                <div class="profile-image-container">
+                    <div class="profile-image-wrapper">
+                        <img src="images/00eb764d-9875-49f8-a078-5fd1b08df896.jpg"
+                             alt="Ankit Maurya"
+                             class="profile-image">
+                        <div class="profile-ring"></div>
+                        <div class="profile-ring-2"></div>
+                    </div>
+                    <!-- Floating Icons -->
+                    <div class="floating-icon floating-icon-1">
+                        <i class="fab fa-html5 text-orange-500"></i>
+                    </div>
+                    <div class="floating-icon floating-icon-2">
+                        <i class="fab fa-react text-cyan-400"></i>
+                    </div>
+                    <div class="floating-icon floating-icon-3">
+                        <i class="fab fa-php text-purple-400"></i>
+                    </div>
+                    <div class="floating-icon floating-icon-4">
+                        <i class="fab fa-js text-yellow-400"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <a href="#about" class="text-gray-400 hover:text-purple-500 transition-colors">
+            <i class="fas fa-chevron-down text-2xl"></i>
+        </a>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="py-24 relative overflow-hidden">
+    <!-- Background Decorations -->
+    <div class="absolute top-20 left-10 w-72 h-72 bg-purple-600/10 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-20 right-10 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>
+
+    <div class="container mx-auto px-6 relative z-10">
+        <!-- Section Header -->
+        <div class="text-center mb-16" data-aos="fade-up">
+            <span class="text-purple-500 font-medium text-sm uppercase tracking-wider">Get To Know</span>
+            <h2 class="text-4xl md:text-5xl font-bold mt-2">About <span class="text-gradient">Me</span></h2>
+        </div>
+
+        <div class="about-main-wrapper">
+            <!-- Image Side -->
+            <div class="about-image-column" data-aos="fade-right" data-aos-duration="1000">
+                <div class="about-image-wrapper">
+                    <!-- Decorative Background Circle -->
+                    <div class="about-bg-circle"></div>
+
+                    <!-- Main Image Container -->
+                    <div class="about-image-box">
+                        <img src="images/ankit2.jpeg"
+                             alt="Ankit Maurya"
+                             class="about-photo">
+                        <!-- Gradient Overlay -->
+                        <div class="about-photo-overlay"></div>
+                        <!-- Corner Decorations -->
+                        <div class="corner-decoration corner-tl"></div>
+                        <div class="corner-decoration corner-br"></div>
+                    </div>
+
+                    <!-- Stats Row Below Image -->
+                    <div class="about-stats-row">
+                        <div class="about-stat-item" data-aos="fade-up" data-aos-delay="200">
+                            <div class="stat-number text-gradient">2+</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                        <div class="about-stat-item" data-aos="fade-up" data-aos-delay="300">
+                            <div class="stat-number text-gradient">3</div>
+                            <div class="stat-label">E-Commerce Builds</div>
+                        </div>
+                        <div class="about-stat-item" data-aos="fade-up" data-aos-delay="400">
+                            <div class="stat-number text-gradient">14+</div>
+                            <div class="stat-label">Technologies</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content Side -->
+            <div class="about-content-column" data-aos="fade-left" data-aos-duration="1000">
+                <!-- Intro Badge -->
+                <div class="inline-flex items-center gap-2 bg-purple-500/10 border border-purple-500/20 rounded-full px-4 py-2 mb-6">
+                    <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                    <span class="text-sm text-purple-400">Available for Freelance</span>
+                </div>
+
+                <h3 class="text-2xl md:text-3xl font-bold mb-4">
+                    Full Stack Web Developer
+                </h3>
+
+                <p class="text-gray-300 mb-4 leading-relaxed">
+                    I am a passionate Full Stack Web Developer based in <strong class="text-white">Mumbai, India</strong>,
+                    with <strong class="text-purple-400">2+ years</strong> of hands-on experience building scalable,
+                    user-friendly, and SEO-friendly web applications across the MERN stack, Next.js, and PHP / CodeIgniter 4.
+                </p>
+
+                <p class="text-gray-400 mb-8 leading-relaxed">
+                    I have delivered 3 complete e-commerce platforms — covering responsive UI, REST APIs, authentication
+                    systems, database design, admin dashboards, payment integration, and SEO. I care about clean code,
+                    MVC architecture, performance, and collaborating closely with UI/UX teams.
+                </p>
+
+                <!-- Info Cards Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                    <div class="about-info-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="info-card-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="info-card-content">
+                            <span class="info-label">Name</span>
+                            <p class="info-value">Ankit Maurya</p>
+                        </div>
+                    </div>
+
+                    <div class="about-info-card" data-aos="fade-up" data-aos-delay="150">
+                        <div class="info-card-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-card-content">
+                            <span class="info-label">Email</span>
+                            <p class="info-value">mauryankit071@gmail.com</p>
+                        </div>
+                    </div>
+
+                    <div class="about-info-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="info-card-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-card-content">
+                            <span class="info-label">Location</span>
+                            <p class="info-value">Mumbai, India</p>
+                        </div>
+                    </div>
+
+                    <div class="about-info-card" data-aos="fade-up" data-aos-delay="250">
+                        <div class="info-card-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="info-card-content">
+                            <span class="info-label">Education</span>
+                            <p class="info-value">MCA &middot; Integral University</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tech Stack -->
+                <div class="mb-8">
+                    <h4 class="text-sm uppercase tracking-wider text-gray-400 mb-4">Tech Stack</h4>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="tech-badge"><i class="fab fa-react"></i> Next.js</span>
+                        <span class="tech-badge"><i class="fab fa-react"></i> React.js</span>
+                        <span class="tech-badge"><i class="fab fa-node-js"></i> Node.js</span>
+                        <span class="tech-badge"><i class="fas fa-leaf"></i> MongoDB</span>
+                        <span class="tech-badge"><i class="fab fa-php"></i> PHP</span>
+                        <span class="tech-badge"><i class="fas fa-fire"></i> CodeIgniter 4</span>
+                        <span class="tech-badge"><i class="fas fa-database"></i> MySQL</span>
+                        <span class="tech-badge"><i class="fab fa-js"></i> JavaScript</span>
+                        <span class="tech-badge"><i class="fas fa-code"></i> TypeScript</span>
+                        <span class="tech-badge"><i class="fas fa-wind"></i> Tailwind CSS</span>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex flex-wrap gap-4">
+                    <a href="#contact" class="btn-primary">
+                        <i class="fas fa-paper-plane mr-2"></i>
+                        <span>Hire Me</span>
+                    </a>
+                    <a href="#" class="btn-secondary">
+                        <i class="fas fa-download mr-2"></i>
+                        <span>Download CV</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- About Section End -->
+
+<!-- Services Section -->
+<section id="services" class="py-20 bg-gray-800/30">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="section-title inline-block">My Services</h2>
+            <p class="text-gray-400 max-w-2xl mx-auto mt-4">
+                I offer a wide range of services to help businesses establish a strong online presence and achieve their digital goals.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="services-grid">
+            <article class="service-card" data-aos="fade-up" data-aos-delay="0" data-accent="cyan">
+                <div class="service-card-inner">
+                    <span class="service-num" aria-hidden="true">01</span>
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="service-title">Full Stack Web Development</h3>
+                    <p class="service-desc">End-to-end web apps with React, Next.js, Node.js, MongoDB, PHP and CodeIgniter 4 &mdash; clean MVC architecture and modular code.</p>
+                    <div class="service-tags">
+                        <span>React</span><span>Next.js</span><span>Node.js</span>
+                    </div>
+                    <a href="#contact" class="service-cta" aria-label="Discuss this service">
+                        <span>Learn more</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="service-card" data-aos="fade-up" data-aos-delay="80" data-accent="violet">
+                <div class="service-card-inner">
+                    <span class="service-num" aria-hidden="true">02</span>
+                    <div class="service-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3 class="service-title">E-Commerce Platforms</h3>
+                    <p class="service-desc">Production-ready stores with product catalog, cart, orders, admin dashboard, payment integration and SEO &mdash; across MERN, Next.js, and PHP stacks.</p>
+                    <div class="service-tags">
+                        <span>MERN</span><span>Next.js</span><span>PHP</span>
+                    </div>
+                    <a href="#contact" class="service-cta" aria-label="Discuss this service">
+                        <span>Learn more</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="service-card" data-aos="fade-up" data-aos-delay="160" data-accent="rose">
+                <div class="service-card-inner">
+                    <span class="service-num" aria-hidden="true">03</span>
+                    <div class="service-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3 class="service-title">REST API Development</h3>
+                    <p class="service-desc">Reusable, modular REST APIs with JWT auth, validation, role-based access, and seamless frontend integration tested in Postman.</p>
+                    <div class="service-tags">
+                        <span>JWT</span><span>Express</span><span>Postman</span>
+                    </div>
+                    <a href="#contact" class="service-cta" aria-label="Discuss this service">
+                        <span>Learn more</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="service-card" data-aos="fade-up" data-aos-delay="240" data-accent="amber">
+                <div class="service-card-inner">
+                    <span class="service-num" aria-hidden="true">04</span>
+                    <div class="service-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3 class="service-title">Database Design</h3>
+                    <p class="service-desc">Optimized schemas and queries for both MySQL and MongoDB &mdash; indexed for performance and modeled for scale.</p>
+                    <div class="service-tags">
+                        <span>MySQL</span><span>MongoDB</span><span>Indexing</span>
+                    </div>
+                    <a href="#contact" class="service-cta" aria-label="Discuss this service">
+                        <span>Learn more</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="service-card" data-aos="fade-up" data-aos-delay="320" data-accent="emerald">
+                <div class="service-card-inner">
+                    <span class="service-num" aria-hidden="true">05</span>
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="service-title">Responsive &amp; SEO UI</h3>
+                    <p class="service-desc">Mobile-first, accessible interfaces with Tailwind CSS and Bootstrap, server-side rendering, and on-page SEO that ranks.</p>
+                    <div class="service-tags">
+                        <span>Tailwind</span><span>Bootstrap</span><span>SSR</span>
+                    </div>
+                    <a href="#contact" class="service-cta" aria-label="Discuss this service">
+                        <span>Learn more</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="service-card" data-aos="fade-up" data-aos-delay="400" data-accent="sky">
+                <div class="service-card-inner">
+                    <span class="service-num" aria-hidden="true">06</span>
+                    <div class="service-icon">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                    </div>
+                    <h3 class="service-title">Deployment &amp; Version Control</h3>
+                    <p class="service-desc">Git/GitHub workflows and deployments on shared/VPS hosting with environment configuration and zero-downtime updates.</p>
+                    <div class="service-tags">
+                        <span>Git</span><span>GitHub</span><span>VPS</span>
+                    </div>
+                    <a href="#contact" class="service-cta" aria-label="Discuss this service">
+                        <span>Learn more</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- Basic Skills Section -->
+<section id="basic-skills" class="py-20 relative overflow-hidden">
+    <!-- Background Decorations -->
+    <div class="absolute top-0 left-0 w-full h-full">
+        <div class="absolute top-20 right-20 w-64 h-64 bg-purple-600/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-20 left-20 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="container mx-auto px-6 relative z-10">
+        <!-- Section Header -->
+        <div class="text-center mb-16" data-aos="fade-up">
+            <span class="text-purple-500 font-medium text-sm uppercase tracking-wider">Foundation</span>
+            <h2 class="text-4xl md:text-5xl font-bold mt-2">Basic <span class="text-gradient">Skills</span></h2>
+            <p class="text-gray-400 max-w-2xl mx-auto mt-4">
+                Strong foundation in core programming languages that form the backbone of software development.
+            </p>
+        </div>
+
+        <!-- Basic Skills Cards -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+            <!-- C Language -->
+            <div class="basic-skill-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="basic-skill-icon c-lang">
+                    <span class="skill-letter">C</span>
+                </div>
+                <h3 class="basic-skill-name">C Language</h3>
+                <p class="basic-skill-desc">System Programming</p>
+                <div class="basic-skill-level">
+                    <div class="level-bar">
+                        <div class="level-fill" data-level="75"></div>
+                    </div>
+                    <span class="level-text">75%</span>
+                </div>
+            </div>
+
+            <!-- C++ -->
+            <div class="basic-skill-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="basic-skill-icon cpp-lang">
+                    <span class="skill-letter">C++</span>
+                </div>
+                <h3 class="basic-skill-name">C++</h3>
+                <p class="basic-skill-desc">Object Oriented</p>
+                <div class="basic-skill-level">
+                    <div class="level-bar">
+                        <div class="level-fill" data-level="70"></div>
+                    </div>
+                    <span class="level-text">70%</span>
+                </div>
+            </div>
+
+            <!-- DSA -->
+            <div class="basic-skill-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="basic-skill-icon java-lang">
+                    <i class="fas fa-sitemap"></i>
+                </div>
+                <h3 class="basic-skill-name">DSA</h3>
+                <p class="basic-skill-desc">Data Structures &amp; Algos</p>
+                <div class="basic-skill-level">
+                    <div class="level-bar">
+                        <div class="level-fill" data-level="70"></div>
+                    </div>
+                    <span class="level-text">70%</span>
+                </div>
+            </div>
+
+            <!-- TypeScript -->
+            <div class="basic-skill-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="basic-skill-icon python-lang">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3 class="basic-skill-name">TypeScript</h3>
+                <p class="basic-skill-desc">Typed JavaScript</p>
+                <div class="basic-skill-level">
+                    <div class="level-bar">
+                        <div class="level-fill" data-level="75"></div>
+                    </div>
+                    <span class="level-text">75%</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Info -->
+        <div class="mt-12 text-center" data-aos="fade-up" data-aos-delay="500">
+            <div class="inline-flex items-center gap-3 bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-full px-6 py-3">
+                <i class="fas fa-graduation-cap text-purple-500"></i>
+                <span class="text-gray-300">These languages form the foundation of my programming journey</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="py-20 bg-gray-800/30">
+    <div class="container mx-auto px-6">
+        <div class="flex flex-col lg:flex-row gap-12">
+            <!-- Skills Content -->
+            <div class="lg:w-1/2" data-aos="fade-right">
+                <h2 class="section-title">Technical Skills</h2>
+                <p class="text-gray-400 mb-8">
+                    I have acquired a diverse set of skills through years of dedicated learning and practical experience. Here are my core technical competencies.
+                </p>
+
+                <div class="space-y-6">
+                    <div class="skill-item">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium">Next.js</span>
+                            <span class="text-purple-500">90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium">React.js</span>
+                            <span class="text-purple-500">88%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="88"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium">Node.js</span>
+                            <span class="text-purple-500">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium">MongoDB</span>
+                            <span class="text-purple-500">82%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="82"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium">PHP / CodeIgniter 4</span>
+                            <span class="text-purple-500">90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium">MySQL</span>
+                            <span class="text-purple-500">88%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="88"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium">JavaScript</span>
+                            <span class="text-purple-500">88%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="88"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium">TypeScript</span>
+                            <span class="text-purple-500">75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="75"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium">Tailwind CSS</span>
+                            <span class="text-purple-500">90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium">Bootstrap / CSS3</span>
+                            <span class="text-purple-500">88%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="88"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium">REST API / Postman</span>
+                            <span class="text-purple-500">90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium">Git / GitHub</span>
+                            <span class="text-purple-500">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="85"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills Visual -->
+            <div class="lg:w-1/2" data-aos="fade-left">
+                <div class="grid grid-cols-3 gap-6">
+                    <!-- Web Technologies -->
+                    <div class="tech-card" data-aos="zoom-in" data-aos-delay="100">
+                        <i class="fab fa-html5 text-4xl text-orange-500"></i>
+                        <span>HTML5</span>
+                    </div>
+                    <div class="tech-card" data-aos="zoom-in" data-aos-delay="150">
+                        <i class="fab fa-css3-alt text-4xl text-blue-500"></i>
+                        <span>CSS3</span>
+                    </div>
+                    <div class="tech-card" data-aos="zoom-in" data-aos-delay="200">
+                        <i class="fab fa-js text-4xl text-yellow-400"></i>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="tech-card" data-aos="zoom-in" data-aos-delay="225">
+                        <i class="fas fa-code text-4xl text-blue-500"></i>
+                        <span>TypeScript</span>
+                    </div>
+                    <div class="tech-card" data-aos="zoom-in" data-aos-delay="250">
+                        <i class="fab fa-php text-4xl text-purple-400"></i>
+                        <span>PHP</span>
+                    </div>
+                    <div class="tech-card" data-aos="zoom-in" data-aos-delay="300">
+                        <i class="fas fa-fire text-4xl text-orange-500"></i>
+                        <span>CodeIgniter 4</span>
+                    </div>
+                    <div class="tech-card" data-aos="zoom-in" data-aos-delay="350">
+                        <i class="fab fa-react text-4xl text-cyan-400"></i>
+                        <span>React</span>
+                    </div>
+                    <div class="tech-card" data-aos="zoom-in" data-aos-delay="400">
+                        <i class="fab fa-node-js text-4xl text-green-500"></i>
+                        <span>Node.js</span>
+                    </div>
+                    <div class="tech-card" data-aos="zoom-in" data-aos-delay="450">
+                        <i class="fas fa-database text-4xl text-blue-400"></i>
+                        <span>MySQL</span>
+                    </div>
+                    <div class="tech-card" data-aos="zoom-in" data-aos-delay="500">
+                        <i class="fab fa-git-alt text-4xl text-orange-600"></i>
+                        <span>Git</span>
+                    </div>
+                    <div class="tech-card" data-aos="zoom-in" data-aos-delay="550">
+                        <i class="fab fa-react text-4xl text-white"></i>
+                        <span>Next.js</span>
+                    </div>
+                    <div class="tech-card" data-aos="zoom-in" data-aos-delay="600">
+                        <i class="fas fa-leaf text-4xl text-green-500"></i>
+                        <span>MongoDB</span>
+                    </div>
+                    <div class="tech-card" data-aos="zoom-in" data-aos-delay="650">
+                        <i class="fas fa-wind text-4xl text-cyan-400"></i>
+                        <span>Tailwind CSS</span>
+                    </div>
+                    <div class="tech-card" data-aos="zoom-in" data-aos-delay="700">
+                        <i class="fab fa-bootstrap text-4xl text-purple-500"></i>
+                        <span>Bootstrap</span>
+                    </div>
+                    <div class="tech-card" data-aos="zoom-in" data-aos-delay="750">
+                        <i class="fas fa-plug text-4xl text-green-400"></i>
+                        <span>REST API</span>
+                    </div>
+                    <div class="tech-card" data-aos="zoom-in" data-aos-delay="800">
+                        <i class="fas fa-paper-plane text-4xl text-orange-400"></i>
+                        <span>Postman</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="py-20 bg-gray-800/30">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="section-title inline-block">My Projects</h2>
+            <p class="text-gray-400 max-w-2xl mx-auto mt-4">
+                Here are some of my recent projects that showcase my skills and expertise in web development.
+            </p>
+        </div>
+
+        <!-- Project Filter -->
+        <div class="flex flex-wrap justify-center gap-4 mb-12" data-aos="fade-up">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="next.js">Next.js</button>
+            <button class="filter-btn" data-filter="react">React</button>
+            <button class="filter-btn" data-filter="node.js">Node.js</button>
+            <button class="filter-btn" data-filter="mongodb">MongoDB</button>
+            <button class="filter-btn" data-filter="php">PHP</button>
+            <button class="filter-btn" data-filter="codeigniter">CodeIgniter</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid">
+
+            <!-- 1. SPMart - React + Node + Mongo (Featured Resume Project) -->
+            <div class="project-card" data-aos="fade-up" data-aos-delay="0" data-category="react react.js node.js mongodb tailwind">
+                <div class="project-image">
+                    <img src="images/spmart.png" alt="SPMart — E-Commerce Platform">
+                    <span class="project-badge"><i class="fas fa-star"></i> Featured</span>
+                    <div class="project-overlay">
+                        <a href="https://github.com/ankit-maurya123" target="_blank" class="project-link" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3 class="text-xl font-semibold mb-2">SPMart &mdash; E-Commerce Platform</h3>
+                    <p class="text-gray-400 text-sm mb-4">Full-featured grocery e-commerce platform with product listing, user authentication, cart, order management, responsive UI, and admin dashboard.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tech-tag">React.js</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">Tailwind CSS</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. E-Store - Next.js + Node + Mongo (Featured Resume Project) -->
+            <div class="project-card" data-aos="fade-up" data-aos-delay="100" data-category="next.js node.js mongodb">
+                <div class="project-image">
+                    <img src="images/estore.png" alt="E-Store — Premium Electronics Hub">
+                    <span class="project-badge"><i class="fas fa-star"></i> Featured</span>
+                    <div class="project-overlay">
+                        <a href="https://github.com/ankit-maurya123" target="_blank" class="project-link" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3 class="text-xl font-semibold mb-2">E-Store &mdash; Premium Electronics Hub</h3>
+                    <p class="text-gray-400 text-sm mb-4">SEO-friendly electronics e-commerce with server-side rendering, secure authentication, product filtering, category management, and optimized performance.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tech-tag">Next.js</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">SEO</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Watch-Collection - PHP + CI4 + MySQL (Featured Resume Project) -->
+            <div class="project-card" data-aos="fade-up" data-aos-delay="200" data-category="php codeigniter mysql">
+                <div class="project-image">
+                    <img src="images/spm-watch.png" alt="SPM Watch — Premium Watch Collection">
+                    <span class="project-badge"><i class="fas fa-star"></i> Featured</span>
+                    <div class="project-overlay">
+                        <a href="https://github.com/ankit-maurya123" target="_blank" class="project-link" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3 class="text-xl font-semibold mb-2">SPM Watch &mdash; Premium Watch Collection</h3>
+                    <p class="text-gray-400 text-sm mb-4">Dynamic watch-selling website with product management, user login/signup, admin panel, order handling, category management, and database optimization.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tech-tag">PHP</span>
+                        <span class="tech-tag">CodeIgniter 4</span>
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">Bootstrap</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Supporting projects -->
+            <div class="project-card" data-aos="fade-up" data-aos-delay="300" data-category="react react.js node.js mongodb">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600" alt="MERN CRUD Application">
+                    <div class="project-overlay">
+                        <a href="#" class="project-link" title="View Project">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                        <a href="https://github.com/ankit-maurya123" target="_blank" class="project-link" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3 class="text-xl font-semibold mb-2">MERN CRUD Application</h3>
+                    <p class="text-gray-400 text-sm mb-4">A full-stack CRUD app with React frontend and Node.js + MongoDB backend. JWT auth, REST APIs, role-based access, and responsive UI.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tech-tag">React.js</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">REST API</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-aos="fade-up" data-aos-delay="400" data-category="php codeigniter mysql">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600" alt="PHP CRUD Application">
+                    <div class="project-overlay">
+                        <a href="#" class="project-link" title="View Project">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                        <a href="https://github.com/ankit-maurya123" target="_blank" class="project-link" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3 class="text-xl font-semibold mb-2">CodeIgniter 4 CRUD App</h3>
+                    <p class="text-gray-400 text-sm mb-4">PHP &amp; CodeIgniter 4 application using MVC architecture, MySQL, form validation, session management, and Tailwind-styled UI.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tech-tag">PHP</span>
+                        <span class="tech-tag">CodeIgniter 4</span>
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">Tailwind CSS</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-aos="fade-up" data-aos-delay="500" data-category="next.js react react.js mongodb">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=600" alt="Next.js Blog CMS">
+                    <div class="project-overlay">
+                        <a href="#" class="project-link" title="View Project">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                        <a href="https://github.com/ankit-maurya123" target="_blank" class="project-link" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3 class="text-xl font-semibold mb-2">Next.js Blog CMS</h3>
+                    <p class="text-gray-400 text-sm mb-4">A modern blog content management system with Next.js + MongoDB. Markdown editor, dynamic routing, SEO optimization, and admin panel.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tech-tag">Next.js</span>
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">Tailwind CSS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section id="testimonials" class="py-20">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="section-title inline-block">Testimonials</h2>
+            <p class="text-gray-400 max-w-2xl mx-auto mt-4">
+                What my clients say about working with me.
+            </p>
+        </div>
+
+        <div class="testimonial-slider" data-aos="fade-up">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="quote-icon">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p class="text-gray-300 mb-6">"Ankit consistently delivers clean, well-structured code. His expertise across the MERN stack, Next.js, and CodeIgniter, plus solid API design, has been invaluable on our e-commerce builds."</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Rahul Sharma" class="w-12 h-12 rounded-full mr-4 object-cover">
+                        <div>
+                            <h4 class="font-semibold">Rahul Sharma</h4>
+                            <p class="text-gray-400 text-sm">Project Manager</p>
+                        </div>
+                    </div>
+                    <div class="flex mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="quote-icon">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p class="text-gray-300 mb-6">"Great problem-solving skills and always meets deadlines. Ankit&#039;s work on our authentication system was exceptional."</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Priya Patel" class="w-12 h-12 rounded-full mr-4 object-cover">
+                        <div>
+                            <h4 class="font-semibold">Priya Patel</h4>
+                            <p class="text-gray-400 text-sm">Team Lead</p>
+                        </div>
+                    </div>
+                    <div class="flex mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="quote-icon">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p class="text-gray-300 mb-6">"Professional and skilled developer. The web application he built for us exceeded our expectations. Highly recommended!"</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Vikram Singh" class="w-12 h-12 rounded-full mr-4 object-cover">
+                        <div>
+                            <h4 class="font-semibold">Vikram Singh</h4>
+                            <p class="text-gray-400 text-sm">Client</p>
+                        </div>
+                    </div>
+                    <div class="flex mt-4 text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-20 bg-gray-800/30">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="section-title inline-block">Get In Touch</h2>
+            <p class="text-gray-400 max-w-2xl mx-auto mt-4">
+                Have a project in mind? Let's discuss how we can work together to bring your ideas to life.
+            </p>
+        </div>
+
+        <div class="flex flex-col lg:flex-row gap-12">
+            <!-- Contact Info -->
+            <div class="lg:w-1/3" data-aos="fade-right">
+                <div class="space-y-6">
+                    <div class="contact-info-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-1">Location</h4>
+                            <p class="text-gray-400">Mumbai, India - 400097</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-1">Email</h4>
+                            <a href="mailto:mauryankit071@gmail.com" class="text-gray-400 hover:text-purple-500 transition-colors">mauryankit071@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-info-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-1">Phone</h4>
+                            <a href="tel:+919336613389" class="text-gray-400 hover:text-purple-500 transition-colors">+91 9336613389</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Links -->
+                <div class="mt-8">
+                    <h4 class="font-semibold mb-4">Follow Me</h4>
+                    <div class="flex space-x-4">
+                        <a href="https://github.com/ankit-maurya123" target="_blank" title="GitHub"
+                           class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-purple-600 transition-all duration-300 hover:scale-110">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/ankit-maurya-a93489264/" target="_blank" title="LinkedIn"
+                           class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-purple-600 transition-all duration-300 hover:scale-110">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://leetcode.com/u/eFKU0WLgdR/" target="_blank" title="LeetCode"
+                           class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-purple-600 transition-all duration-300 hover:scale-110">
+                            <i class="fas fa-code"></i>
+                        </a>
+                        <a href="mailto:mauryankit071@gmail.com" target="_blank" title="Email"
+                           class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-purple-600 transition-all duration-300 hover:scale-110">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="lg:w-2/3" data-aos="fade-left">
+                <form id="contact-form" action="/api/contact" method="POST" class="space-y-6">
+                    <input type="checkbox" name="botcheck" class="hidden" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Your Name</label>
+                            <input type="text" id="name" name="name" class="form-input" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Your Email</label>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="john@example.com" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject" class="form-label">Subject</label>
+                        <input type="text" id="subject" name="subject" class="form-input" placeholder="Project Discussion" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="form-label">Your Message</label>
+                        <textarea id="message" name="message" rows="5" class="form-input resize-none" placeholder="Tell me about your project..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary w-full md:w-auto">
+                        <span>Send Message</span>
+                        <i class="fas fa-paper-plane ml-2"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800/50 border-t border-gray-700">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- About Column -->
+                <div class="md:col-span-2">
+                    <a href="" class="text-2xl font-bold inline-block mb-4">
+                        <span class="text-gradient">Portfolio</span>
+                    </a>
+                    <p class="text-gray-400 mb-6 max-w-md">
+                        Passionate about creating innovative web solutions. Let's work together to bring your ideas to life.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://github.com/ankit-maurya123" target="_blank"
+                           class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-purple-600 transition-all duration-300 hover:scale-110"
+                           title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/ankit-maurya-a93489264/" target="_blank"
+                           class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-purple-600 transition-all duration-300 hover:scale-110"
+                           title="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://leetcode.com/u/eFKU0WLgdR/" target="_blank"
+                           class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-purple-600 transition-all duration-300 hover:scale-110"
+                           title="LeetCode">
+                            <i class="fas fa-code"></i>
+                        </a>
+                        <a href="mailto:mauryankit071@gmail.com"
+                           class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-purple-600 transition-all duration-300 hover:scale-110"
+                           title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-purple-500 transition-colors">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-purple-500 transition-colors">About</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-purple-500 transition-colors">Services</a></li>
+                        <li><a href="#projects" class="text-gray-400 hover:text-purple-500 transition-colors">Projects</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-purple-500 transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact Info</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-envelope text-purple-500 mr-3 w-5"></i>
+                            <span>mauryankit071@gmail.com</span>
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-phone text-purple-500 mr-3 w-5"></i>
+                            <span>+91 9336613389</span>
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-map-marker-alt text-purple-500 mr-3 w-5"></i>
+                            <span>Mumbai, India - 400097</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="border-t border-gray-700 mt-10 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">
+                    &copy; 2026 <span class="text-gradient font-semibold">Ankit Maurya</span>. All rights reserved.
+                </p>
+                <p class="text-gray-400 text-sm mt-4 md:mt-0">
+                    Designed with <i class="fas fa-heart text-red-500"></i> in India
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scroll-top" class="fixed bottom-8 right-8 w-12 h-12 rounded-full bg-purple-600 text-white flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-purple-700 hover:scale-110 z-30">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
