@@ -151,7 +151,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // Typing effect
     const typedText = document.getElementById('typed-text');
     if (typedText) {
-        const texts = ['Full Stack Web Developer', 'Next.js Developer', 'React.js Developer', 'Node.js Developer', 'PHP / CodeIgniter 4 Developer', 'MERN Stack Developer'];
+        const texts = [
+            'PHP / CodeIgniter 4 Developer',
+            'Full Stack Web Developer',
+            'MySQL & REST APIs',
+            'Learning MERN Stack',
+            'React & Next.js — Side Projects'
+        ];
         let textIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
