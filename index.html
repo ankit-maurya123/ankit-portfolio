@@ -267,63 +267,124 @@
             <h2 class="text-4xl md:text-5xl font-bold mt-2">About <span class="text-gradient">Me</span></h2>
         </div>
 
-        <div class="about-editor-wrap" data-aos="fade-up" data-aos-duration="900">
+        <div class="about-mag" data-aos="fade-up" data-aos-duration="900">
 
-            <!-- Code Editor Mock -->
-            <div class="code-editor">
-                <!-- Editor Top Bar -->
-                <div class="code-editor-header">
-                    <div class="code-editor-dots">
-                        <span class="ce-dot ce-dot-red"></span>
-                        <span class="ce-dot ce-dot-yellow"></span>
-                        <span class="ce-dot ce-dot-green"></span>
-                    </div>
-                    <div class="code-editor-tabs">
-                        <span class="code-tab code-tab-active">
-                            <i class="fab fa-js"></i>
-                            <span>about.js</span>
-                            <span class="tab-close">&times;</span>
-                        </span>
-                        <span class="code-tab">
-                            <i class="fas fa-file-alt"></i>
-                            <span>readme.md</span>
-                        </span>
-                    </div>
-                    <div class="code-editor-branch">
-                        <i class="fas fa-code-branch"></i> main
-                    </div>
+            <!-- Big editorial headline -->
+            <div class="mag-headline">
+                <div class="mag-issue">
+                    <span class="mag-issue-num">No. 01</span>
+                    <span class="mag-issue-line"></span>
+                    <span class="mag-issue-topic">A Developer's Diary</span>
                 </div>
+                <h3 class="mag-title">
+                    Two lives.
+                    <span class="mag-title-gradient">One keyboard.</span>
+                </h3>
+                <p class="mag-lead">
+                    A short story about who I am, where I work, and what I&rsquo;m building &mdash;
+                    told the way I&rsquo;d tell a friend over chai, not the way a resume would.
+                </p>
+            </div>
 
-                <!-- Editor Body -->
-                <div class="code-editor-body">
-                    <pre class="code-block"><span class="ce-line" data-ln="1"><span class="ce-c">// A short story about me</span></span><span class="ce-line" data-ln="2"><span class="ce-c">// Simple facts, no fluff.</span></span><span class="ce-line" data-ln="3"></span><span class="ce-line" data-ln="4"><span class="ce-k">const</span> <span class="ce-v">ankit</span> <span class="ce-o">=</span> {</span><span class="ce-line" data-ln="5">  <span class="ce-p">name</span>: <span class="ce-s">"Ankit Maurya"</span>,</span><span class="ce-line" data-ln="6">  <span class="ce-p">from</span>: <span class="ce-s">"Jaunpur, Uttar Pradesh"</span>,</span><span class="ce-line" data-ln="7">  <span class="ce-p">education</span>: <span class="ce-s">"MCA (Pursuing, 2025&ndash;2027)"</span>,</span><span class="ce-line" data-ln="8"></span><span class="ce-line" data-ln="9">  <span class="ce-p">currentJob</span>: {</span><span class="ce-line" data-ln="10">    <span class="ce-p">role</span>: <span class="ce-s">"Full Stack Developer"</span>,</span><span class="ce-line" data-ln="11">    <span class="ce-p">company</span>: <span class="ce-s">"Digital Zillas"</span>, <span class="ce-c">// marketing agency</span></span><span class="ce-line" data-ln="12">    <span class="ce-p">place</span>: <span class="ce-s">"Bangalore"</span>,</span><span class="ce-line" data-ln="13">    <span class="ce-p">since</span>: <span class="ce-n">2023</span>,</span><span class="ce-line" data-ln="14">    <span class="ce-p">stack</span>: [<span class="ce-s">"PHP"</span>, <span class="ce-s">"CodeIgniter 4"</span>, <span class="ce-s">"MySQL"</span>]</span><span class="ce-line" data-ln="15">  },</span><span class="ce-line" data-ln="16"></span><span class="ce-line" data-ln="17">  <span class="ce-p">sideProjects</span>: <span class="ce-n">3</span>, <span class="ce-c">// e-commerce sites, built solo end-to-end</span></span><span class="ce-line" data-ln="18">  <span class="ce-p">learning</span>: [<span class="ce-s">"React"</span>, <span class="ce-s">"Next.js"</span>, <span class="ce-s">"Node.js"</span>, <span class="ce-s">"MongoDB"</span>],</span><span class="ce-line" data-ln="19"></span><span class="ce-line" data-ln="20">  <span class="ce-p">lookingFor</span>: <span class="ce-s">"Full-time role at a product company"</span>,</span><span class="ce-line" data-ln="21">  <span class="ce-p">openTo</span>: [<span class="ce-s">"Remote"</span>, <span class="ce-s">"Bangalore"</span>, <span class="ce-s">"Anywhere in India"</span>],</span><span class="ce-line" data-ln="22"></span><span class="ce-line" data-ln="23">  <span class="ce-p">values</span>: [</span><span class="ce-line" data-ln="24">    <span class="ce-s">"clean code over clever code"</span>,</span><span class="ce-line" data-ln="25">    <span class="ce-s">"ship small, ship often"</span>,</span><span class="ce-line" data-ln="26">    <span class="ce-s">"ask when unsure, learn by building"</span></span><span class="ce-line" data-ln="27">  ]</span><span class="ce-line" data-ln="28">};</span><span class="ce-line" data-ln="29"></span><span class="ce-line" data-ln="30"><span class="ce-k">export default</span> <span class="ce-v">ankit</span>;<span class="ce-cursor">|</span></span></pre>
+            <!-- Diary format: Morning / Evening / Coming Up -->
+            <div class="mag-diary">
+                <article class="mag-entry" data-aos="fade-up" data-aos-delay="100">
+                    <div class="mag-entry-side">
+                        <span class="mag-time">09:30</span>
+                        <span class="mag-slot">Morning</span>
+                        <span class="mag-icon"><i class="fas fa-sun"></i></span>
+                    </div>
+                    <div class="mag-entry-body">
+                        <h4 class="mag-entry-title">PHP pays the bills.</h4>
+                        <p>
+                            I open my laptop at <strong>Digital Zillas</strong>, a marketing
+                            agency in <strong>Bangalore</strong>. Two years in. My tools are
+                            <strong>PHP</strong>, <strong>CodeIgniter&nbsp;4</strong>, and
+                            <strong>MySQL</strong>. I build client websites, admin panels,
+                            small e-commerce stores &mdash; clean MVC, no shortcuts.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="mag-entry" data-aos="fade-up" data-aos-delay="150">
+                    <div class="mag-entry-side">
+                        <span class="mag-time">21:00</span>
+                        <span class="mag-slot">Evening</span>
+                        <span class="mag-icon"><i class="fas fa-moon"></i></span>
+                    </div>
+                    <div class="mag-entry-body">
+                        <h4 class="mag-entry-title">JavaScript is where I grow.</h4>
+                        <p>
+                            After work I open a different editor. I build in <strong>React</strong>,
+                            <strong>Next.js</strong>, <strong>Node</strong>, and <strong>MongoDB</strong>.
+                            Three full e-commerce sites already live &mdash;
+                            <strong>SPMart</strong>, <strong>E-Store</strong>, <strong>SPM Health</strong>.
+                            Not for a client. For me.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="mag-entry" data-aos="fade-up" data-aos-delay="200">
+                    <div class="mag-entry-side">
+                        <span class="mag-time">Next</span>
+                        <span class="mag-slot">Coming up</span>
+                        <span class="mag-icon"><i class="fas fa-arrow-right"></i></span>
+                    </div>
+                    <div class="mag-entry-body">
+                        <h4 class="mag-entry-title">A product team.</h4>
+                        <p>
+                            I&rsquo;m looking for a full-time role at a product company &mdash;
+                            somewhere the frontend is fast, the code is modern, and I can
+                            keep learning JavaScript deeply. I&rsquo;ll bring 2 years of shipping
+                            experience and a habit of finishing what I start.
+                        </p>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Big pull quote -->
+            <blockquote class="mag-quote" data-aos="fade-up">
+                <span class="mag-quote-mark">&ldquo;</span>
+                <p>I write PHP by day and React by night. I&rsquo;m not switching languages &mdash; I&rsquo;m adding one.</p>
+            </blockquote>
+
+            <!-- Facts strip -->
+            <div class="mag-facts" data-aos="fade-up" data-aos-delay="100">
+                <div class="mag-fact">
+                    <span class="mag-fact-label">Home</span>
+                    <strong class="mag-fact-value">Jaunpur, UP</strong>
                 </div>
-
-                <!-- Editor Status Bar -->
-                <div class="code-editor-footer">
-                    <div class="ce-footer-left">
-                        <span class="ce-badge ce-badge-live">
-                            <span class="ce-badge-dot"></span>
-                            Open to full-time
-                        </span>
-                        <span><i class="fas fa-map-marker-alt"></i> Jaunpur, UP</span>
-                        <span><i class="fas fa-briefcase"></i> Working from Bangalore</span>
-                    </div>
-                    <div class="ce-footer-right">
-                        <span>JavaScript</span>
-                        <span>UTF-8</span>
-                        <span>Ln 30, Col 21</span>
-                    </div>
+                <div class="mag-fact">
+                    <span class="mag-fact-label">Work</span>
+                    <strong class="mag-fact-value">Bangalore</strong>
+                </div>
+                <div class="mag-fact">
+                    <span class="mag-fact-label">Studying</span>
+                    <strong class="mag-fact-value">MCA &middot; 2025&ndash;27</strong>
+                </div>
+                <div class="mag-fact">
+                    <span class="mag-fact-label">Since</span>
+                    <strong class="mag-fact-value">2023</strong>
+                </div>
+                <div class="mag-fact">
+                    <span class="mag-fact-label">Status</span>
+                    <strong class="mag-fact-value mag-fact-live">
+                        <span class="mag-fact-dot"></span>
+                        Open to work
+                    </strong>
                 </div>
             </div>
 
-            <!-- Tech Stack (below editor, keeps existing badges but full-width) -->
-            <div class="about-stack" data-aos="fade-up" data-aos-delay="100">
-                <div class="about-stack-block">
-                    <p class="about-stack-label">
-                        <span class="about-stack-tag">Daily</span>
-                        What I use at work
-                    </p>
+            <!-- Tech stack: split "Daily" vs "Learning" — no cards, just labeled rows -->
+            <div class="mag-stack" data-aos="fade-up" data-aos-delay="150">
+                <div class="mag-stack-row">
+                    <div class="mag-stack-heading">
+                        <span class="mag-stack-num">01</span>
+                        <div>
+                            <p class="mag-stack-title">What I use at work</p>
+                            <p class="mag-stack-sub">Every day, for two years</p>
+                        </div>
+                    </div>
                     <div class="flex flex-wrap gap-3">
                         <span class="tech-badge"><i class="fab fa-php"></i> PHP</span>
                         <span class="tech-badge"><i class="fas fa-fire"></i> CodeIgniter 4</span>
@@ -333,11 +394,14 @@
                     </div>
                 </div>
 
-                <div class="about-stack-block">
-                    <p class="about-stack-label">
-                        <span class="about-stack-tag about-stack-tag-learn">Learning</span>
-                        Side projects &amp; growing skills
-                    </p>
+                <div class="mag-stack-row">
+                    <div class="mag-stack-heading">
+                        <span class="mag-stack-num mag-stack-num-alt">02</span>
+                        <div>
+                            <p class="mag-stack-title">What I&rsquo;m growing into</p>
+                            <p class="mag-stack-sub">Side projects, real code</p>
+                        </div>
+                    </div>
                     <div class="flex flex-wrap gap-3">
                         <span class="tech-badge tech-badge-learn"><i class="fab fa-react"></i> React.js</span>
                         <span class="tech-badge tech-badge-learn"><i class="fab fa-react"></i> Next.js</span>
@@ -348,20 +412,27 @@
                 </div>
             </div>
 
-            <!-- Action Buttons -->
-            <div class="about-actions" data-aos="fade-up" data-aos-delay="200">
-                <a href="#contact" class="btn-primary">
-                    <i class="fas fa-paper-plane mr-2"></i>
-                    <span>Get in touch</span>
-                </a>
-                <a href="https://www.linkedin.com/in/ankit-maurya-a93489264/" target="_blank" rel="noopener" class="btn-secondary">
-                    <i class="fab fa-linkedin mr-2"></i>
-                    <span>See on LinkedIn</span>
-                </a>
-                <a href="https://github.com/ankit-maurya123" target="_blank" rel="noopener" class="btn-secondary">
-                    <i class="fab fa-github mr-2"></i>
-                    <span>GitHub</span>
-                </a>
+            <!-- Signature + actions -->
+            <div class="mag-sign" data-aos="fade-up">
+                <div class="mag-sign-line">
+                    <span class="mag-sign-dash"></span>
+                    <span class="mag-sign-name">Ankit Maurya &middot; Full Stack Developer</span>
+                    <span class="mag-sign-dash"></span>
+                </div>
+                <div class="about-actions">
+                    <a href="#contact" class="btn-primary">
+                        <i class="fas fa-paper-plane mr-2"></i>
+                        <span>Get in touch</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/ankit-maurya-a93489264/" target="_blank" rel="noopener" class="btn-secondary">
+                        <i class="fab fa-linkedin mr-2"></i>
+                        <span>See on LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/ankit-maurya123" target="_blank" rel="noopener" class="btn-secondary">
+                        <i class="fab fa-github mr-2"></i>
+                        <span>GitHub</span>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
