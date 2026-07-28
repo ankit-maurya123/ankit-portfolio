@@ -267,132 +267,77 @@
             <h2 class="text-4xl md:text-5xl font-bold mt-2">About <span class="text-gradient">Me</span></h2>
         </div>
 
-        <div class="about-main-wrapper">
-            <!-- Image Side -->
-            <div class="about-image-column" data-aos="fade-right" data-aos-duration="1000">
-                <div class="about-image-wrapper">
-                    <!-- Decorative Background Circle -->
-                    <div class="about-bg-circle"></div>
+        <div class="about-editor-wrap" data-aos="fade-up" data-aos-duration="900">
 
-                    <!-- Main Image Container -->
-                    <div class="about-image-box">
-                        <img src="images/ankit.jpg?v=2"
-                             alt="Ankit Maurya"
-                             class="about-photo">
-                        <!-- Gradient Overlay -->
-                        <div class="about-photo-overlay"></div>
-                        <!-- Corner Decorations -->
-                        <div class="corner-decoration corner-tl"></div>
-                        <div class="corner-decoration corner-br"></div>
+            <!-- Code Editor Mock -->
+            <div class="code-editor">
+                <!-- Editor Top Bar -->
+                <div class="code-editor-header">
+                    <div class="code-editor-dots">
+                        <span class="ce-dot ce-dot-red"></span>
+                        <span class="ce-dot ce-dot-yellow"></span>
+                        <span class="ce-dot ce-dot-green"></span>
                     </div>
+                    <div class="code-editor-tabs">
+                        <span class="code-tab code-tab-active">
+                            <i class="fab fa-js"></i>
+                            <span>about.js</span>
+                            <span class="tab-close">&times;</span>
+                        </span>
+                        <span class="code-tab">
+                            <i class="fas fa-file-alt"></i>
+                            <span>readme.md</span>
+                        </span>
+                    </div>
+                    <div class="code-editor-branch">
+                        <i class="fas fa-code-branch"></i> main
+                    </div>
+                </div>
 
-                    <!-- Stats Row Below Image -->
-                    <div class="about-stats-row">
-                        <div class="about-stat-item" data-aos="fade-up" data-aos-delay="200">
-                            <div class="stat-number text-gradient">2</div>
-                            <div class="stat-label">Years at job</div>
-                        </div>
-                        <div class="about-stat-item" data-aos="fade-up" data-aos-delay="300">
-                            <div class="stat-number text-gradient">3</div>
-                            <div class="stat-label">E-com projects</div>
-                        </div>
-                        <div class="about-stat-item" data-aos="fade-up" data-aos-delay="400">
-                            <div class="stat-number text-gradient">10+</div>
-                            <div class="stat-label">Tools I use</div>
-                        </div>
+                <!-- Editor Body -->
+                <div class="code-editor-body">
+                    <pre class="code-block"><span class="ce-line" data-ln="1"><span class="ce-c">// A short story about me</span></span><span class="ce-line" data-ln="2"><span class="ce-c">// Simple facts, no fluff.</span></span><span class="ce-line" data-ln="3"></span><span class="ce-line" data-ln="4"><span class="ce-k">const</span> <span class="ce-v">ankit</span> <span class="ce-o">=</span> {</span><span class="ce-line" data-ln="5">  <span class="ce-p">name</span>: <span class="ce-s">"Ankit Maurya"</span>,</span><span class="ce-line" data-ln="6">  <span class="ce-p">from</span>: <span class="ce-s">"Jaunpur, Uttar Pradesh"</span>,</span><span class="ce-line" data-ln="7">  <span class="ce-p">education</span>: <span class="ce-s">"MCA (Pursuing, 2025&ndash;2027)"</span>,</span><span class="ce-line" data-ln="8"></span><span class="ce-line" data-ln="9">  <span class="ce-p">currentJob</span>: {</span><span class="ce-line" data-ln="10">    <span class="ce-p">role</span>: <span class="ce-s">"Full Stack Developer"</span>,</span><span class="ce-line" data-ln="11">    <span class="ce-p">company</span>: <span class="ce-s">"Digital Zillas"</span>, <span class="ce-c">// marketing agency</span></span><span class="ce-line" data-ln="12">    <span class="ce-p">place</span>: <span class="ce-s">"Bangalore"</span>,</span><span class="ce-line" data-ln="13">    <span class="ce-p">since</span>: <span class="ce-n">2023</span>,</span><span class="ce-line" data-ln="14">    <span class="ce-p">stack</span>: [<span class="ce-s">"PHP"</span>, <span class="ce-s">"CodeIgniter 4"</span>, <span class="ce-s">"MySQL"</span>]</span><span class="ce-line" data-ln="15">  },</span><span class="ce-line" data-ln="16"></span><span class="ce-line" data-ln="17">  <span class="ce-p">sideProjects</span>: <span class="ce-n">3</span>, <span class="ce-c">// e-commerce sites, built solo end-to-end</span></span><span class="ce-line" data-ln="18">  <span class="ce-p">learning</span>: [<span class="ce-s">"React"</span>, <span class="ce-s">"Next.js"</span>, <span class="ce-s">"Node.js"</span>, <span class="ce-s">"MongoDB"</span>],</span><span class="ce-line" data-ln="19"></span><span class="ce-line" data-ln="20">  <span class="ce-p">lookingFor</span>: <span class="ce-s">"Full-time role at a product company"</span>,</span><span class="ce-line" data-ln="21">  <span class="ce-p">openTo</span>: [<span class="ce-s">"Remote"</span>, <span class="ce-s">"Bangalore"</span>, <span class="ce-s">"Anywhere in India"</span>],</span><span class="ce-line" data-ln="22"></span><span class="ce-line" data-ln="23">  <span class="ce-p">values</span>: [</span><span class="ce-line" data-ln="24">    <span class="ce-s">"clean code over clever code"</span>,</span><span class="ce-line" data-ln="25">    <span class="ce-s">"ship small, ship often"</span>,</span><span class="ce-line" data-ln="26">    <span class="ce-s">"ask when unsure, learn by building"</span></span><span class="ce-line" data-ln="27">  ]</span><span class="ce-line" data-ln="28">};</span><span class="ce-line" data-ln="29"></span><span class="ce-line" data-ln="30"><span class="ce-k">export default</span> <span class="ce-v">ankit</span>;<span class="ce-cursor">|</span></span></pre>
+                </div>
+
+                <!-- Editor Status Bar -->
+                <div class="code-editor-footer">
+                    <div class="ce-footer-left">
+                        <span class="ce-badge ce-badge-live">
+                            <span class="ce-badge-dot"></span>
+                            Open to full-time
+                        </span>
+                        <span><i class="fas fa-map-marker-alt"></i> Jaunpur, UP</span>
+                        <span><i class="fas fa-briefcase"></i> Working from Bangalore</span>
+                    </div>
+                    <div class="ce-footer-right">
+                        <span>JavaScript</span>
+                        <span>UTF-8</span>
+                        <span>Ln 30, Col 21</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Content Side -->
-            <div class="about-content-column" data-aos="fade-left" data-aos-duration="1000">
-                <!-- Intro Badge -->
-                <div class="inline-flex items-center gap-2 bg-purple-500/10 border border-purple-500/20 rounded-full px-4 py-2 mb-6">
-                    <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-                    <span class="text-sm text-purple-400">Open to full-time roles</span>
-                </div>
-
-                <h3 class="text-2xl md:text-3xl font-bold mb-4">
-                    A short story about me
-                </h3>
-
-                <p class="text-gray-300 mb-4 leading-relaxed">
-                    I&rsquo;m Ankit, from <strong class="text-white">Jaunpur, Uttar Pradesh</strong>. For the last 2 years I&rsquo;ve been working at
-                    <strong class="text-purple-400">Digital Zillas</strong>, a digital marketing agency in Bangalore. My day-to-day
-                    is <strong class="text-white">PHP with CodeIgniter&nbsp;4</strong> and <strong class="text-white">MySQL</strong> &mdash;
-                    building client websites, admin panels, and small e-commerce stores.
-                </p>
-
-                <p class="text-gray-400 mb-4 leading-relaxed">
-                    On the side, I&rsquo;ve shipped 3 full e-commerce projects on my own &mdash; product listing, cart, login,
-                    admin panel, orders, everything. I did this because I wanted to understand the whole thing, not just
-                    one part of it.
-                </p>
-
-                <p class="text-gray-400 mb-8 leading-relaxed">
-                    Right now I&rsquo;m learning the <strong class="text-white">MERN stack</strong> (React, Node, MongoDB, Next.js)
-                    because I want to move into product companies where the frontend is fast, the code is modern, and I
-                    can grow as a developer. I&rsquo;m looking for a full-time role where I can bring my PHP experience and
-                    keep learning JavaScript deeply.
-                </p>
-
-                <!-- Info Cards Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-                    <div class="about-info-card" data-aos="fade-up" data-aos-delay="100">
-                        <div class="info-card-icon">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <div class="info-card-content">
-                            <span class="info-label">Name</span>
-                            <p class="info-value">Ankit Maurya</p>
-                        </div>
-                    </div>
-
-                    <div class="about-info-card" data-aos="fade-up" data-aos-delay="150">
-                        <div class="info-card-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="info-card-content">
-                            <span class="info-label">Email</span>
-                            <p class="info-value">mauryankit071@gmail.com</p>
-                        </div>
-                    </div>
-
-                    <div class="about-info-card" data-aos="fade-up" data-aos-delay="200">
-                        <div class="info-card-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="info-card-content">
-                            <span class="info-label">Location</span>
-                            <p class="info-value">Jaunpur, UP</p>
-                        </div>
-                    </div>
-
-                    <div class="about-info-card" data-aos="fade-up" data-aos-delay="250">
-                        <div class="info-card-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <div class="info-card-content">
-                            <span class="info-label">Education</span>
-                            <p class="info-value">MCA &middot; Pursuing (2025 &ndash; 2027)</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Tech Stack -->
-                <div class="mb-8">
-                    <h4 class="text-sm uppercase tracking-wider text-gray-400 mb-4">What I work with</h4>
-
-                    <p class="text-xs text-gray-500 mb-2">Daily at work</p>
-                    <div class="flex flex-wrap gap-3 mb-5">
+            <!-- Tech Stack (below editor, keeps existing badges but full-width) -->
+            <div class="about-stack" data-aos="fade-up" data-aos-delay="100">
+                <div class="about-stack-block">
+                    <p class="about-stack-label">
+                        <span class="about-stack-tag">Daily</span>
+                        What I use at work
+                    </p>
+                    <div class="flex flex-wrap gap-3">
                         <span class="tech-badge"><i class="fab fa-php"></i> PHP</span>
                         <span class="tech-badge"><i class="fas fa-fire"></i> CodeIgniter 4</span>
                         <span class="tech-badge"><i class="fas fa-database"></i> MySQL</span>
                         <span class="tech-badge"><i class="fab fa-js"></i> JavaScript</span>
                         <span class="tech-badge"><i class="fab fa-bootstrap"></i> Bootstrap</span>
                     </div>
+                </div>
 
-                    <p class="text-xs text-gray-500 mb-2">Learning &amp; building side projects</p>
+                <div class="about-stack-block">
+                    <p class="about-stack-label">
+                        <span class="about-stack-tag about-stack-tag-learn">Learning</span>
+                        Side projects &amp; growing skills
+                    </p>
                     <div class="flex flex-wrap gap-3">
                         <span class="tech-badge tech-badge-learn"><i class="fab fa-react"></i> React.js</span>
                         <span class="tech-badge tech-badge-learn"><i class="fab fa-react"></i> Next.js</span>
@@ -401,18 +346,22 @@
                         <span class="tech-badge tech-badge-learn"><i class="fas fa-wind"></i> Tailwind CSS</span>
                     </div>
                 </div>
+            </div>
 
-                <!-- Action Buttons -->
-                <div class="flex flex-wrap gap-4">
-                    <a href="#contact" class="btn-primary">
-                        <i class="fas fa-paper-plane mr-2"></i>
-                        <span>Get in touch</span>
-                    </a>
-                    <a href="https://www.linkedin.com/in/ankit-maurya-a93489264/" target="_blank" rel="noopener" class="btn-secondary">
-                        <i class="fab fa-linkedin mr-2"></i>
-                        <span>See on LinkedIn</span>
-                    </a>
-                </div>
+            <!-- Action Buttons -->
+            <div class="about-actions" data-aos="fade-up" data-aos-delay="200">
+                <a href="#contact" class="btn-primary">
+                    <i class="fas fa-paper-plane mr-2"></i>
+                    <span>Get in touch</span>
+                </a>
+                <a href="https://www.linkedin.com/in/ankit-maurya-a93489264/" target="_blank" rel="noopener" class="btn-secondary">
+                    <i class="fab fa-linkedin mr-2"></i>
+                    <span>See on LinkedIn</span>
+                </a>
+                <a href="https://github.com/ankit-maurya123" target="_blank" rel="noopener" class="btn-secondary">
+                    <i class="fab fa-github mr-2"></i>
+                    <span>GitHub</span>
+                </a>
             </div>
         </div>
     </div>
